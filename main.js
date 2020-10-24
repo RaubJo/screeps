@@ -26,11 +26,13 @@ module.exports.loop = function () {
 	var minUpgraders = 2;
 	var minWallUpgraders = 2;
 	var minRepairers = 2;
+	var minMiners = 1;
 	var totalHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
 	var totalBuilders = _.sum(Game.creeps, (c) => c.memory.role == 'builder');
 	var totalUpgraders = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader');
 	var totalWallUpgraders = _.sum(Game.creeps, (c) => c.memory.role == 'wallUpgrader');
 	var totalRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'repairer');
+	var totalMiners = _.sum(Game.creeps, (c) => c.memory.role == 'miner');
 
 	var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
 	var name = undefined;
@@ -43,6 +45,9 @@ module.exports.loop = function () {
 		if(name == ERR_NOT_ENOUGH_ENERGY && totalHarvesters == 0){
 		    name = Game.spawns.Spawn1.createCustomCreep(Game.spawns.Spawn1.room.energyAvailable, "harvester");
 		}
+	}
+	else if(totalMiner < minMiners){
+		name = Game.spawns.createMiner(44,37);
 	}
 	else if(totalRepairers < minRepairers){
 	    name = Game.spawns.Spawn1.createCustomCreep(energy, "repairer");

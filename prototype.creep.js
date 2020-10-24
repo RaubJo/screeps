@@ -6,10 +6,9 @@ var roles = {
     repairer: require('role.repairer')
 };
 module.exports = function() {
-Creep.prototype.doRole =
+	Creep.prototype.doRole =
     function () {
 	    roles[this.memory.role].run(this);
-	    //this.say(this.memory.role);
     };
 
 Creep.prototype.toggleIsWorking =
