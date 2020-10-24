@@ -1,6 +1,6 @@
 require("prototype.spawn")();
-require("prototype.tower");
-require("prototype.creep");
+require("prototype.tower")();
+require("prototype.creep")();
 
 module.exports.loop = function () {
 //Clear up deceased creeps' memory

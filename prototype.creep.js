@@ -5,7 +5,7 @@ var roles = {
     wallUpgrader: require('role.wallUpgrader'),
     repairer: require('role.repairer')
 };
-
+module.exports = function() {
 Creep.prototype.doRole =
     function () {
 	    roles[this.memory.role].run(this);
@@ -23,4 +23,5 @@ Creep.prototype.toggleIsWorking =
 		else if(this.memory.isWorking == undefined) {
 			console.log(this.name + ": (isWorking) not defined!");
 		}
-    };
+	};
+};
