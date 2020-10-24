@@ -57,7 +57,7 @@ module.exports = function() {
 
       return this.spawnCreep(body, roleName + "_" + Game.time, { memory: {
         role: 'miner',
-        coordinates: [x,y]
+        coordinates: [x,y],
         sourceIndex: undefined,
         isWorking: false
       }})
