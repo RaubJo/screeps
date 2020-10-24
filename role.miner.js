@@ -1,14 +1,3 @@
-//This role is for a Container miner
-
-/*
-  memory = {
-    isWorking = (False||True),
-    role = "miner",
-    sourceIndex = "5bbcabf49099fc012e6348e2",
-    coordinates = [44,37]
-  };
-*/
-
 /* =Description=
 A miner will move to specified coordinates and then mine the given sourceId
 until the carry part is full, then it will drop the mined energy onto a built
@@ -22,6 +11,16 @@ can mine 2 energy per tick 10/2 = 5, therefore the miner must have 5 WORK parts.
 
 body = [WORK,WORK,WORK,WORK,WORK,MOVE] = 550 energy
 */
+
+/*
+  memory = {
+    isWorking = (False||True),
+    role = "miner",
+    sourceIndex = "5bbcabf49099fc012e6348e2",
+    coordinates = [44,37]
+  };
+*/
+
 
 module.exports = {
   run: function (creep) {
