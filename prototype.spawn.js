@@ -60,6 +60,6 @@ module.exports = function() {
         coordinates: [x,y],
         sourceIndex: undefined,
         isWorking: false
-      }})
-    }
+      }});
+    };
 };
