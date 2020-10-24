@@ -21,7 +21,7 @@ module.exports = {
 		  	}
 		  	else {
 		  	    roleUpgrader.run(creep);
-		  	    creep.say("Upgrading");
+		  	    creep.say("U");
 		  	}
 		}
 		else {
