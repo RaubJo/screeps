@@ -47,7 +47,7 @@ module.exports.loop = function () {
 		}
 	}
 	else if(totalMiners < minMiners){
-		name = Game.spawns.createMiner(44,37);
+		name = Game.spawns.Spawn1.createMiner(44,37);
 	}
 	else if(totalRepairers < minRepairers){
 	    name = Game.spawns.Spawn1.createCustomCreep(energy, "repairer");
