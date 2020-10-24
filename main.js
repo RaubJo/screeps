@@ -46,7 +46,7 @@ module.exports.loop = function () {
 		    name = Game.spawns.Spawn1.createCustomCreep(Game.spawns.Spawn1.room.energyAvailable, "harvester");
 		}
 	}
-	else if(totalMiner < minMiners){
+	else if(totalMiners < minMiners){
 		name = Game.spawns.createMiner(44,37);
 	}
 	else if(totalRepairers < minRepairers){
