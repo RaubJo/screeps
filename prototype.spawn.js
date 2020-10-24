@@ -41,7 +41,7 @@ module.exports = function() {
             body.push(MOVE);
         }
 
-        return this.spawCreep(body, roleName + '_' + Game.time, { memory: {
+        return this.spawnCreep(body, roleName + '_' + Game.time, { memory: {
             role: 'longDistanceHarvester',
             home: home,
             target: target,
@@ -49,4 +49,17 @@ module.exports = function() {
             isWorking: false
         }});
     };
+
+    StructureSpawn.prototype.createMiner =
+    function (x, y) {
+      var body = [WORK,WORK,WORK,WORK,WORK,MOVE,MOVE];
+      var roleName = "miner";
+
+      return this.spawnCreep(body, roleName + "_" + Game.time, { memory: {
+        role: 'miner',
+        coordinates: [x,y]
+        sourceIndex: undefined,
+        isWorking: false
+      }})
+    }
 };
