@@ -9,7 +9,7 @@ module.exports = {
 
 
 		if(creep.memory.isWorking){
-			var target = creep.pos.findClosestByPath(FIND_MY_STRUCTURES, {
+			var target = creep.pos.findClosestByPath(FIND_STRUCTURES, {
 				filter: (s) => s.hits < s.hitsMax && (s.structureType == STRUCTURE_RAMPART || s.structureType == STRUCTURE_WALL)
 				});
 			if(creep.repair(target) == ERR_NOT_IN_RANGE){

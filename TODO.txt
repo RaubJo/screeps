@@ -2,6 +2,7 @@
 TODO:
 Init longDistanceHarvesting in room
 Make creeps harvest from the secondary energy source in home room
+
 Create militant creeps to protect the colony
     Scout - moves fast but has weak defenses and attack capabilities
     Grunt - well balanced warrior
