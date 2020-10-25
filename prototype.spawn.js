@@ -52,7 +52,7 @@ module.exports = function() {
 
     StructureSpawn.prototype.createMiner =
     function (x, y) {
-      var body = [WORK,WORK,WORK,WORK,WORK,MOVE,MOVE];
+      var body = [WORK,WORK,WORK,WORK,WORK,MOVE,MOVE,MOVE];
       var roleName = "miner";
 
       return this.spawnCreep(body, roleName + "_" + Game.time, { memory: {
