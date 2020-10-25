@@ -30,6 +30,7 @@ module.exports = {
     if(posx != creep.memory.coordinates[0] && posy != creep.memory.coordinates[1]){
       const path = creep.room.findPath(creep.pos,target);
       creep.move(path[0].direction);
+      creep.room.visual.line(creep.pos, target, {color: 'red', lineStyle: 'dashed'});
     }
     else {
       var source = creep.pos.findClosestByPath(FIND_SOURCES);
