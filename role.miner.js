@@ -31,11 +31,7 @@ module.exports = {
 
 
     if(posx != creep.memory.coordinates[0] && posy != creep.memory.coordinates[1]){
-      const path = creep.room.findPath(creep.pos, target);
-      new RoomVisual('W17S21').poly(path, {stroke: '#fff', strokeWidth: .15,
-      opacity: .2, lineStyle: 'dashed'});
-
-      creep.moveByPath(path);
+      creep.moveTo(creep.memory.coordinates[0],creep.memory.coordinates[1]);
     }
     else {
       var source = creep.pos.findClosestByPath(FIND_SOURCES);
