@@ -32,7 +32,7 @@ module.exports = {
 
     if(posx != creep.memory.coordinates[0] && posy != creep.memory.coordinates[1]){
       const path = creep.room.findPath(creep.pos, target);
-      new RoomVisual('W17S18').poly(path, {stroke: '#fff', strokeWidth: .15,
+      new RoomVisual('W17S21').poly(path, {stroke: '#fff', strokeWidth: .15,
       opacity: .2, lineStyle: 'dashed'});
 
       creep.move(path[0].direction);
