@@ -25,12 +25,12 @@ body = [WORK,WORK,WORK,WORK,WORK,MOVE] = 550 energy
 module.exports = {
   run: function (creep) {
 
-    if(creep.pos.x != creep.memory.coordinates[0] && creep.pos.y != creep.memory.coordinates[1]){
-      creep.moveTo(creep.memory.coordinates[0],creep.memory.coordinates[1]);
-    }
-    else {
+    if(creep.pos.x === creep.memory.coordinates[0] && creep.pos.y === creep.memory.coordinates[1]){
       var source = creep.pos.findClosestByPath(FIND_SOURCES);
       creep.harvest(source);
+    }
+    else {
+      creep.moveTo(creep.memory.coordinates[0],creep.memory.coordinates[1]);
     }
   }
 };
