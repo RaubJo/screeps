@@ -41,7 +41,7 @@ module.exports.loop = function () {
 
 	if (totalHarvesters < minHarvesters) {
 		/*name = Game.spawns.Spawn1.createCreep([WORK,WORK,CARRY,MOVE], undefined,
-			{ role: 'harvester', isWorking: false});*/
+			{ role: 'harvester', isWorking: false});*/
 		name = Game.spawns.Spawn1.createCustomCreep(energy, 'harvester');
 
 		if(name == ERR_NOT_ENOUGH_ENERGY && totalHarvesters == 0){
