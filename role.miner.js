@@ -19,6 +19,9 @@ body = [WORK,WORK,WORK,WORK,WORK,MOVE] = 550 energy
     sourceIndex = "5bbcabf49099fc012e6348e2",
     coordinates = [44,37]
   };
+
+  38,3 = North source
+  44,37 = South source
 */
 
 
