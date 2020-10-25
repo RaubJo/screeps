@@ -26,9 +26,10 @@ module.exports = {
   run: function (creep) {
     posx = creep.pos.x;
     posy = creep.pos.y;
-
+    var target = new RoomPosition(creep.memory.coordinates[0],creep.memory.coordinates[1],'W17S21');
     if(posx != creep.memory.coordinates[0] && posy != creep.memory.coordinates[1]){
-      creep.moveTo(creep.memory.coordinates[0],creep.memory.coordinates[1]);
+      const path = creep.room.findPath(creep.pos,target);
+      creep.move(path[0].direction);
     }
     else {
       var source = creep.pos.findClosestByPath(FIND_SOURCES);
