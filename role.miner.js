@@ -26,7 +26,7 @@ module.exports = {
   run: function (creep) {
     posx = creep.pos.x;
     posy = creep.pos.y;
-    //var target = new RoomPosition(creep.memory.coordinates[0],creep.memory.coordinates[1],'W17S21');
+    var target = new RoomPosition(creep.memory.coordinates[0],creep.memory.coordinates[1],'W17S21');
 
 
 
