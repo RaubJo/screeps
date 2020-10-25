@@ -35,7 +35,7 @@ module.exports = {
       new RoomVisual('W17S21').poly(path, {stroke: '#fff', strokeWidth: .15,
       opacity: .2, lineStyle: 'dashed'});
 
-      creep.move(path[0].direction);
+      creep.moveByPath(path);
     }
     else {
       var source = creep.pos.findClosestByPath(FIND_SOURCES);
