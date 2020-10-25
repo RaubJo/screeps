@@ -23,8 +23,8 @@ body = [WORK,WORK,WORK,WORK,WORK,MOVE] = 550 energy
 
 
 module.exports = {
-  run: function (creep) {}
-  
+  run: function (creep) {
+
     if(creep.pos.x != creep.memory.coordinates[0] && creep.pos.y != creep.memory.coordinates[1]){
       creep.moveTo(creep.memory.coordinates[0],creep.memory.coordinates[1]);
     }
