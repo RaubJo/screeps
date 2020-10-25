@@ -23,14 +23,9 @@ body = [WORK,WORK,WORK,WORK,WORK,MOVE] = 550 energy
 
 
 module.exports = {
-  run: function (creep) {
-    posx = creep.pos.x;
-    posy = creep.pos.y;
-    var target = new RoomPosition(creep.memory.coordinates[0],creep.memory.coordinates[1],'W17S21');
-
-
-
-    if(posx != creep.memory.coordinates[0] && posy != creep.memory.coordinates[1]){
+  run: function (creep) {}
+  
+    if(creep.pos.x != creep.memory.coordinates[0] && creep.pos.y != creep.memory.coordinates[1]){
       creep.moveTo(creep.memory.coordinates[0],creep.memory.coordinates[1]);
     }
     else {
