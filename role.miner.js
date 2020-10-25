@@ -26,11 +26,16 @@ module.exports = {
   run: function (creep) {
     posx = creep.pos.x;
     posy = creep.pos.y;
-    var target = new RoomPosition(creep.memory.coordinates[0],creep.memory.coordinates[1],'W17S21');
+    //var target = new RoomPosition(creep.memory.coordinates[0],creep.memory.coordinates[1],'W17S21');
+
+
+
     if(posx != creep.memory.coordinates[0] && posy != creep.memory.coordinates[1]){
-      const path = creep.room.findPath(creep.pos,target);
+      const path = Game.rooms['W17S18'].findPath(creep.pos, target.pos);
+      new RoomVisual('W1N1').poly(path, {stroke: '#fff', strokeWidth: .15,
+      opacity: .2, lineStyle: 'dashed'});
+
       creep.move(path[0].direction);
-      creep.room.visual.line(creep.pos, target, {color: 'red', lineStyle: 'dashed'});
     }
     else {
       var source = creep.pos.findClosestByPath(FIND_SOURCES);
