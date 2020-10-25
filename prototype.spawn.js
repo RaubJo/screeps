@@ -41,7 +41,7 @@ module.exports = function() {
             body.push(MOVE);
         }
 
-        return this.spawnCreep(body, roleName + '_' + Game.time, { memory: {
+        return this.spawnCreep(body, 'longDistHarvester_' + Game.time, { memory: {
             role: 'longDistanceHarvester',
             home: home,
             target: target,
