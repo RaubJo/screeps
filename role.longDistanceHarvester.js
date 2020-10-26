@@ -16,7 +16,7 @@ module.exports = {
 											&& s.energy < s.energyCapacity
 				});
 
-				if(cructure == undefined) {
+				if(scructure == undefined) {
 					structure = creep.room.storage;
 				}
 
