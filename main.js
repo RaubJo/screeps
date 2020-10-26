@@ -35,7 +35,7 @@ module.exports.loop = function () {
 	var totalRepairers = _.sum(Game.creeps, (c) => c.memory.role == 'repairer');
 	var totalMiners = _.sum(Game.creeps, (c) => c.memory.role == 'miner');
 	var W18S21_harvester_total = _.sum(Game.creeps, (c) => c.memory.role == 'longDistanceHarvester' && c.memory.target == "W18S21");
-	console.log(W18S21_harvester_total);
+	
 	var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
 	var name = undefined;
 
