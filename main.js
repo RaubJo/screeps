@@ -51,6 +51,9 @@ module.exports.loop = function () {
 	else if(totalMiners < minMiners){
 		name = Game.spawns.Spawn1.createMiner(44,37);
 	}
+	else if(W18S21_harvester_total < W18S21_harvester){
+			name = Game.spawns.Spawn1.createLongDistanceHarvester(energy,3,"W17S21","W18S21",0);
+	}
 	else if(totalRepairers < minRepairers){
 	    name = Game.spawns.Spawn1.createCustomCreep(energy, "repairer");
 	}
@@ -63,9 +66,7 @@ module.exports.loop = function () {
 	else if(totalWallUpgraders < minWallUpgraders){
 	    name = Game.spawns.Spawn1.createCustomCreep(energy, "wallUpgrader");
 	}
-	else if(W18S21_harvester_total < W18S21_harvester){
-			name = Game.spawns.Spawn1.createLongDistanceHarvester(energy,3,"W17S21","W18S21",0);
-	}
+
 
 	if (!(name < 0 || name == undefined)) {
 			console.log("Spawned new creep: " + name);
