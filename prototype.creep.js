@@ -5,7 +5,8 @@ var roles = {
     wallUpgrader: require('role.wallUpgrader'),
     repairer: require('role.repairer'),
 		miner: require('role.miner'),
-		longDistanceHarvester: require('role.longDistanceHarvester')
+		longDistanceHarvester: require('role.longDistanceHarvester'),
+		hauler: require('hauler')
 };
 module.exports = function() {
 	Creep.prototype.doRole =
