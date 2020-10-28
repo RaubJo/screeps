@@ -1,4 +1,3 @@
-require("prototype.creep");
 var roleBuilder = require("role.builder");
 
 module.exports = {
