@@ -36,6 +36,11 @@ module.exports.loop = function () {
 	var totalMiners = _.sum(Game.creeps, (c) => c.memory.role == 'miner');
 	var W18S21_harvester_total = _.sum(Game.creeps, (c) => c.memory.role == 'longDistanceHarvester' && c.memory.target == "W18S21");
 
+	var northMiners = _.sum(Game.creeps, (c) => c.memory.role == 'miner' && c.memory.coordinates[0] == 44);
+	var southMiners = _.sum(Game.creeps, (c) => c.memory.role == 'miner' && c.memory.coordinates[0] == 38);
+console.log(northMiners);
+console.log(southMiners);
+
 	var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
 	var name = undefined;
 
@@ -49,9 +54,7 @@ module.exports.loop = function () {
 		}
 	}
 	else if(totalMiners < minMiners){
-		var northMiners = _.sum(Game.creeps, (c) => c.memory.role == 'miner' && c.memory.coordinates[0] == 44);
-		var southMiners = _.sum(Game.creeps, (c) => c.memory.role == 'miner' && c.memory.coordinates[0] == 38);
-		if(northMiners == 1 && southMiners == 0){
+				if(northMiners == 1 && southMiners == 0){
 			name = Game.spawns.Spawn1.createMiner(44,37);
 		}
 		else if(southMiners == 1 && northMiners == 0){
