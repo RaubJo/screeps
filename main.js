@@ -1,6 +1,6 @@
 require("prototype.spawn")();
 require("prototype.tower")();
-require("prototype.creep")();
+require("prototype.creep");
 
 module.exports.loop = function () {
 //Clear up deceased creeps' memory
@@ -60,8 +60,6 @@ module.exports.loop = function () {
 		else{
 			console.log("NM:"+northMiners+"/SM:"+southMiners);
 		}
-
-
 		name = Game.spawns.Spawn1.createMiner(44,37);
 	}
 	else if(W18S21_harvester_total < W18S21_harvester){

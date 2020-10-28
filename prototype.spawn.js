@@ -1,4 +1,4 @@
-var listOfRoles = ['harvester', 'upgrader', 'builder', 'wallUpgrader', 'repairer'];
+var listOfRoles = ['harvester','upgrader', 'builder', 'wallUpgrader', 'repairer','miner','hauler'];
 
 module.exports = function() {
 
@@ -60,5 +60,44 @@ module.exports = function() {
         sourceIndex: undefined,
         isWorking: false
       }});
+    };
+
+    StructureSpawn.prototype.createClaimer =
+    function(targetRoom) {
+      var body = [CLAIM,MOVE];
+      return this.spawnCreeo(body,"claimer_"+Game.time, { memory: {
+        role: 'claimer',
+        target: target
+      }});
+    };
+
+    StructureSpawn.prototype.spawnCreepsIfNecessary =
+    function() {
+      let room = this.room;
+      let creepsInRoom = room.find(FIND_MY_CREEPS);
+
+      let numberOfCreeps = {};
+      for(let role of listOfRoles){
+        numberOfCreeps[role] = _.sum(creepsInRoom, (c) => c.memory.role == role);
+      }
+      let maxEnergy = room.energyCapacityAvailable;
+      let name = undefined;
+
+      if(numberOfCreeps['harvester'] == 0) {
+        name = this.createCustomCreep(room.energyAvailable,'harvester');
+      }
+      else {
+
+      }
+
+      if(name != undefined && _.isString(name)){
+        console.log(this.name + " spawned new creep: "+name+" ("+Game.creeps[name].memory.role+")");
+        for (let role of listOfRoles) {
+          console.log(role+": "+numberOfCreeps[role]);
+        }
+        for (let roomName in numberOfLongDistanceHarvesters)  {
+          console.log("LongDistanceHarvester"+roomName+": "+numberOfLongDistanceHarvesters[roomName]);
+        }
+      }
     };
 };
