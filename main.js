@@ -38,8 +38,6 @@ module.exports.loop = function () {
 
 	var northMiners = _.sum(Game.creeps, (c) => c.memory.role == 'miner' && c.memory.coordinates[0] == 44);
 	var southMiners = _.sum(Game.creeps, (c) => c.memory.role == 'miner' && c.memory.coordinates[0] == 38);
-console.log(northMiners);
-console.log(southMiners);
 
 	var energy = Game.spawns.Spawn1.room.energyCapacityAvailable;
 	var name = undefined;
@@ -54,10 +52,10 @@ console.log(southMiners);
 		}
 	}
 	else if(totalMiners < minMiners){
-				if(northMiners == 1 && southMiners == 0){
+				if(northMiners != 1){
 			name = Game.spawns.Spawn1.createMiner(44,37);
 		}
-		else if(southMiners == 1 && northMiners == 0){
+		else if(southMiners != 1){
 			name = Game.spawns.Spawn1.createMiner(38,3);
 		}
 		else{
