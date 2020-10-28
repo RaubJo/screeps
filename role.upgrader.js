@@ -8,10 +8,7 @@ module.exports = {
 		}
 
 		if (!creep.memory.isWorking) {
-			var source = creep.pos.findClosestByPath(FIND_SOURCES);
-			if (creep.harvest(source) == ERR_NOT_IN_RANGE) {
-				creep.moveTo(source);
-			}
+			creep.getEnergy();
 		}
 		else {
 			if (creep.upgradeController(creep.room.controller) == ERR_NOT_IN_RANGE){
