@@ -30,13 +30,13 @@ Creep.prototype.toggleIsWorking =
 
 Creep.prototype.getEnergy =
 	function() {
-		let resource = this.pos.findClosestByPath(FIND_DROPPED_RESOURCES);
+		/*let resource = this.pos.findClosestByPath(FIND_DROPPED_RESOURCES);
 		if(resource != undefined){
 			if(this.pickup(resource) == ERR_NOT_IN_RANGE){
 				this.moveTo(resource);
 			}
 		}
-		else {
+		else {*/
 			let container = this.pos.findClosestByPath(FIND_STRUCTURES, {
 				filter: (s) => (s.structureType == STRUCTURE_CONTAINER
 								|| s.structureType == STRUCTURE_STORAGE)
@@ -53,5 +53,5 @@ Creep.prototype.getEnergy =
 					this.moveTo(source);
 				}
 			}
-		}
+		//}
 	}
