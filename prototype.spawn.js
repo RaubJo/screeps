@@ -67,7 +67,7 @@ module.exports = function() {
       var body = [CLAIM,MOVE];
       return this.spawnCreep(body,"claimer_"+Game.time, { memory: {
         role: 'claimer',
-        target: target
+        target: targetRoom
       }});
     };
 
