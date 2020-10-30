@@ -27,8 +27,8 @@ module.exports.loop = function () {
 	var minWallUpgraders = 2;
 	var minRepairers = 2;
 	var minMiners = 2;
-	var W18S21_harvester = 1;
-	let minClaimer = 1;
+	var W18S21_harvester = 3;
+	let minClaimer = 0;
 	let totalClaimer = _.sum(Game.creeps, (c) => c.memory.role == 'claimer');
 	var totalHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
 	var totalBuilders = _.sum(Game.creeps, (c) => c.memory.role == 'builder');
