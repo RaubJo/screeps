@@ -22,7 +22,7 @@ module.exports.loop = function () {
 	var spawns = _.filter(Game.structures, s => s.structureType == STRUCTURE_SPAWN);
 
 	var minHarvesters = 2;
-	var minBuilders = 2;
+	var minBuilders = 3;
 	var minUpgraders = 2;
 	var minWallUpgraders = 2;
 	var minRepairers = 2;
@@ -53,7 +53,7 @@ module.exports.loop = function () {
 		    name = Game.spawns.Spawn1.createCustomCreep(Game.spawns.Spawn1.room.energyAvailable, "harvester");
 		}
 	}
-	
+
 	else if(totalMiners < minMiners){
 				if(northMiners != 1){
 			name = Game.spawns.Spawn1.createMiner(44,37);
