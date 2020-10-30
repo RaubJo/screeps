@@ -1,7 +1,6 @@
 
 TODO:
-Init longDistanceHarvesting in room
-Make creeps harvest from the secondary energy source in home room
+
 
 Create militant creeps to protect the colony
     Scout - moves fast but has weak defenses and attack capabilities
@@ -9,3 +8,6 @@ Create militant creeps to protect the colony
     Tank - heavy armor and attack, moves slow ( be sure that it can move at all)
 
 Container harvesting and filling
+
+
+Protoss-ian "Overmind"
