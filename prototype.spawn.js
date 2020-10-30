@@ -1,4 +1,4 @@
-var listOfRoles = ['harvester','upgrader', 'builder', 'wallUpgrader', 'repairer','miner','hauler'];
+var listOfRoles = ['harvester','upgrader', 'builder', 'wallUpgrader', 'repairer','miner','hauler','claimer'];
 
 module.exports = function() {
 
@@ -65,7 +65,7 @@ module.exports = function() {
     StructureSpawn.prototype.createClaimer =
     function(targetRoom) {
       var body = [CLAIM,MOVE];
-      return this.spawnCreeo(body,"claimer_"+Game.time, { memory: {
+      return this.spawnCreep(body,"claimer_"+Game.time, { memory: {
         role: 'claimer',
         target: target
       }});
