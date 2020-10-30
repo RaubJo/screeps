@@ -16,7 +16,7 @@ module.exports = {
     }
     else {
       let exit = creep.room.findExitTo(creep.memory.target);
-      creep.moveTo(exit);
+      creep.moveTo(creep.pos.findClosestByRange(exit));
     }
   }
 };
