@@ -29,20 +29,28 @@ Creep.prototype.toggleIsWorking =
 
 Creep.prototype.getEnergy =
 	function() {
-		let container = this.pos.findClosestByPath(FIND_STRUCTURES, {
-			filter: (s) => (s.structureType == STRUCTURE_CONTAINER
-							|| s.structureType == STRUCTURE_STORAGE)
-							&& s.store[RESOURCE_ENERGY] > 0
-		});
-		if(container != undefined){
-			if(this.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE){
-				this.moveTo(container);
+		let source = this.pos.findClosestByPath(FIND_DROPPED_RESOURCES);
+		if(source != undefined){
+			if(this.pickup(source) == ERR_NOT_IN_RANGE){
+				this.moveTo(source);
 			}
 		}
 		else {
-			var source = this.pos.findClosestByPath(FIND_SOURCES_ACTIVE);
-			if(this.harvest(source) == ERR_NOT_IN_RANGE){
-				this.moveTo(source);
+			let container = this.pos.findClosestByPath(FIND_STRUCTURES, {
+				filter: (s) => (s.structureType == STRUCTURE_CONTAINER
+								|| s.structureType == STRUCTURE_STORAGE)
+								&& s.store[RESOURCE_ENERGY] > 0
+						});
+			if(container != undefined){
+				if(this.withdraw(container, RESOURCE_ENERGY) == ERR_NOT_IN_RANGE){
+					this.moveTo(container);
+				}
+			}
+			else {
+				var source = this.pos.findClosestByPath(FIND_SOURCES_ACTIVE);
+				if(this.harvest(source) == ERR_NOT_IN_RANGE){
+					this.moveTo(source);
+				}
 			}
 		}
 	}
