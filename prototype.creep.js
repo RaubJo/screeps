@@ -30,10 +30,10 @@ Creep.prototype.toggleIsWorking =
 
 Creep.prototype.getEnergy =
 	function() {
-		let source = this.pos.findClosestByPath(FIND_DROPPED_RESOURCES);
-		if(source != undefined){
-			if(this.pickup(source) == ERR_NOT_IN_RANGE){
-				this.moveTo(source);
+		let resource = this.pos.findClosestByPath(FIND_DROPPED_RESOURCES);
+		if(resource != undefined){
+			if(this.pickup(resource) == ERR_NOT_IN_RANGE){
+				this.moveTo(resource);
 			}
 		}
 		else {
@@ -48,7 +48,7 @@ Creep.prototype.getEnergy =
 				}
 			}
 			else {
-				source = this.pos.findClosestByPath(FIND_SOURCES_ACTIVE);
+				let source = this.pos.findClosestByPath(FIND_SOURCES_ACTIVE);
 				if(this.harvest(source) == ERR_NOT_IN_RANGE){
 					this.moveTo(source);
 				}
