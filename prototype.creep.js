@@ -47,7 +47,7 @@ Creep.prototype.getEnergy =
 				}
 			}
 			else {
-				let source = this.pos.findClosestByPath(FIND_SOURCES_ACTIVE);
+				source = this.pos.findClosestByPath(FIND_SOURCES_ACTIVE);
 				if(this.harvest(source) == ERR_NOT_IN_RANGE){
 					this.moveTo(source);
 				}
