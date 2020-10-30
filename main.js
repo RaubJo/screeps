@@ -28,6 +28,8 @@ module.exports.loop = function () {
 	var minRepairers = 2;
 	var minMiners = 2;
 	var W18S21_harvester = 1;
+	let minClaimer = 1;
+	let totalClaimer = _.sum(Game.creeps, (c) => c.memory.role == 'claimer');
 	var totalHarvesters = _.sum(Game.creeps, (c) => c.memory.role == 'harvester');
 	var totalBuilders = _.sum(Game.creeps, (c) => c.memory.role == 'builder');
 	var totalUpgraders = _.sum(Game.creeps, (c) => c.memory.role == 'upgrader');
@@ -50,6 +52,9 @@ module.exports.loop = function () {
 		if(name == ERR_NOT_ENOUGH_ENERGY && totalHarvesters == 0){
 		    name = Game.spawns.Spawn1.createCustomCreep(Game.spawns.Spawn1.room.energyAvailable, "harvester");
 		}
+	}
+	else if(minClaimer < totalClaimer){
+		name = Game.spawns.Spawn1.createClaimer('W18S21');
 	}
 	else if(totalMiners < minMiners){
 				if(northMiners != 1){
