@@ -15,7 +15,7 @@ module.exports = {
       }
     }
     else {
-      let exit = creep.pos.findExitTo(creep.memory.target);
+      let exit = creep.room.findExitTo(creep.memory.target);
       creep.moveTo(exit);
     }
   }
