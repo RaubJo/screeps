@@ -53,9 +53,7 @@ module.exports.loop = function () {
 		    name = Game.spawns.Spawn1.createCustomCreep(Game.spawns.Spawn1.room.energyAvailable, "harvester");
 		}
 	}
-	else if(minClaimer < totalClaimer){
-		name = Game.spawns.Spawn1.createClaimer('W18S21');
-	}
+	
 	else if(totalMiners < minMiners){
 				if(northMiners != 1){
 			name = Game.spawns.Spawn1.createMiner(44,37);
