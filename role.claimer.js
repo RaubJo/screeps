@@ -15,7 +15,7 @@ module.exports = {
       }
     }
     else {
-      let exit = creep.pos.findExitTo(target);
+      let exit = creep.pos.findExitTo(creep.memory.target);
       creep.moveTo(exit);
     }
   }
